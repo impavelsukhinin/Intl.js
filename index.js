@@ -8,6 +8,7 @@ require('./locale-data/complete.js');
 // hack to export the polyfill as global Intl if needed
 if (!global.Intl) {
     global.Intl = global.IntlPolyfill;
+    global.IntlPolyfill.__disableRegExpRestore();
     global.IntlPolyfill.__applyLocaleSensitivePrototypes();
 }
 
